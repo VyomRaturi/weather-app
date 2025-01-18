@@ -5,9 +5,13 @@
 // Task 5: Create a function updateDOM that will update the DOM with the fetched data.
 // Task 6: Call the fetchData function with a default city name.
 
+const temperatureField = document.querySelector(".temp");
+const cityField = document.querySelector(".time_location p");
+const dateField = document.querySelector(".time_location span");
+const emojiField = document.querySelector(".weather_condition img");
+const weatherField = document.querySelector(".weather_condition span");
 const searchField = document.querySelector(".searchField");
 const form = document.querySelector("form");
-const temperatureField = document.querySelector(".temp");
 
 let target = "Pune";
 
@@ -51,6 +55,10 @@ async function fetchData(target) {
 
 function updateDOM(temp, condition, location, time, emoji) {
   temperatureField.innerText = temp;
+  cityField.innerText = location;
+  dateField.innerText = time;
+  emojiField.src = emoji;
+  weatherField.innerText = condition;
 }
 
 
